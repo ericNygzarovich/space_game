@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:space_game/game_core/game.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,18 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: GameField(),
-    );
-  }
-}
-
-class GameField extends StatelessWidget {
-  const GameField({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(child: Text('run game')),
+      home: Game(),
     );
   }
 }

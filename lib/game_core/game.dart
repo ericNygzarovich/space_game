@@ -1,7 +1,6 @@
 import 'dart:isolate';
 
 import 'package:flutter/material.dart';
-import 'package:space_game/entities/player.dart';
 import 'package:space_game/game_core/main_loop.dart';
 import 'package:space_game/utilits/global_vars.dart';
 
@@ -16,7 +15,6 @@ class _GameState extends State<Game> {
   late Size size;
   late ReceivePort _receivePort;
   late Isolate _isolateLoop;
-  late Player player;
 
   @override
   void initState() {
@@ -31,7 +29,6 @@ class _GameState extends State<Game> {
 
     if (isFirstStartGame) {
       _statrIsolateLoop();
-      player = Player('player', x: 100, y: 100);
       isFirstStartGame = false;
     }
   }
@@ -48,8 +45,6 @@ class _GameState extends State<Game> {
 
   @override
   Widget build(BuildContext context) {
-    player.update();
-
     return GlobalVars.gameScene.buidlScene();
   }
 

@@ -10,7 +10,7 @@ class GameScene extends AppScene {
   double? _startGlobalPosition;
 
   GameScene() {
-    _player = Player('player', x: 200, y: 250);
+    _player = Player('player', x: 0, y: 0);
     _startGlobalPosition = 0;
   }
 
@@ -21,7 +21,6 @@ class GameScene extends AppScene {
 
   void _onPanStart(DragStartDetails details) {
     _startGlobalPosition = details.globalPosition.dx;
-    print(_startGlobalPosition);
   }
 
   void _onPanUpdate(DragUpdateDetails details) {
